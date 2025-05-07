@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learndesign</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lilita+One&display=swap" rel="stylesheet">
+ 
+
+</head>
+<style>
+* {box-sizing: border-box;}
+
+body {
+    display: flex;
+    flex-direction: row;
+    background-color:#fff9f6;
+   
+}
+
+
+.logo {
+    width:30px;
+    position:absolute;
+    top:30px;
+    left:20px;
+}
+
+.lilita-one-regular {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+.title {
+    position:relative;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:3rem;
+    color:#F391B9;
+    top:18rem;
+    left:4rem;
+}
+
+.title-arches {
+    position:relative;
+    left:0;
+    width:400px;
+    padding-top:20%;
+}
+
+.image1 {
+    position: relative;
+    top:3rem;
+    width:30rem;
+    border: 9px solid #BFE5E8;
+    border-radius:50px;
+    justify-content: center;
+}
+
+
+.info {
+    position:relative;
+    font-family:"DM Sans", sans-serif;
+    font-size:1.5rem;
+    background-color:#BFE5E8 ;
+    padding:15px 20px;
+    border-radius:1.5rem;
+    color:#2B4042;
+    margin: 2rem 1rem;
+    text-align:center;
+}
+
+.bottom-pad {
+    margin-bottom:7rem;
+}
+
+
+footer {
+    position:sticky;
+    background-color: #F391B9;
+    width:100%;
+    height:90px;
+    left:0;
+    bottom:0;
+}
+
+.copyright {
+    position:sticky;
+    top:120rem;
+    text-align: center;
+    font-size: 13px;
+    color:#ffff;
+    font-family:"DM Sans", sans-serif;
+}
+
+.dm-sans {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 30px;
+  font-style: normal;
+}
+
+.slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .slider-images {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      width: 100%;
+    }
+
+    .slider-images img {
+      width: 100%;
+      flex-shrink: 0;
+      height: auto;
+      display: block;
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 10px 15px;
+      cursor: pointer;
+      z-index: 1;
+      border-radius: 4px;
+    }
+
+    .slider-button.left {
+      left: 10px;
+    }
+
+    .slider-button.right {
+      right: 10px;
+    }
+
+    .menu-button {
+      position: fixed;
+      top: 30px;
+      right: 20px;
+      z-index: 3;
+      font-size: 4rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color:#F391B9;
+    }
+
+    /* 🧊 Fullscreen overlay */
+    .overlay-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color:#BFE5E8;
+      color:#2B4042;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      z-index: 1000;
+
+    }
+
+    .overlay-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .overlay-menu nav a {
+      color:#2B4042;
+      font-size: 2rem;
+      font-family:"DM Sans", sans-serif;
+      text-decoration: none;
+      margin: 20px 0;
+      transition: color 0.3s ease;
+    }
+
+    .overlay-menu nav a:hover {
+      color:#fff9f6;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 4rem;
+      background: none;
+      border: none;
+      color: #2B4042;
+      cursor: pointer;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+      .slider-button {
+        font-size: 1.5rem;
+        padding: 6px 10px;
+      }
+      .title {
+      position:absolute;
+      font-size:3rem; 
+      font-family: "Lilita One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color:#F391B9;
+      top:11rem;
+      left:4rem;
+      
+      }
+
+    .title-arches {
+    position:relative;
+    left:0px;
+    width:400px;
+    padding-top:20%;
+}
+.footer {
+    position:sticky;
+    background-color: #F391B9;
+    width:100vw;
+    height:90px;
+    left:0;
+    bottom:0;
+}
+
+.copyright {
+    position:sticky;
+    top:120rem;
+    text-align: center;
+    font-size:1rem;
+    color:#ffff;
+    font-family:"DM Sans", sans-serif;
+}
+.logo {
+    width:3rem;
+    position:absolute;
+    top:50px;
+    left:20px;
+}
+
+.burger {
+    width:10rem;
+    position: absolute;
+    left:75%;
+    top:0;
+    
+}
+
+}
+
+@media only screen and (min-width: 768px) {
+
+  .slider-button {
+        font-size: 1.5rem;
+        padding: 6px 10px;
+      }
+      .title {
+      position:absolute;
+      font-size:3rem; 
+      font-family: "Lilita One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color:#F391B9;
+      top:13rem;
+      left:4rem;
+      
+      }
+
+    .title-arches {
+    position:relative;
+    left:0px;
+    width:400px;
+    padding-top:20%;
+}
+.footer {
+    position:sticky;
+    background-color: #F391B9;
+    width:100vw;
+    height:90px;
+    left:0;
+    bottom:0;
+}
+
+.copyright {
+    position:sticky;
+    top:120rem;
+    text-align: center;
+    font-size:1rem;
+    color:#ffff;
+    font-family:"DM Sans", sans-serif;
+}
+.logo {
+    width:3rem;
+    position:absolute;
+    top:50px;
+    left:20px;
+}
+
+.burger {
+    width:10rem;
+    position: absolute;
+    left:85%%;
+    top:0;
+    
+}
+
+}
+
+@media only screen and (min-width: 992px) {
+
+  .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+  .slider-button {
+        font-size: 1.5rem;
+        padding: 6px 10px;
+      }
+      .title {
+      position:absolute;
+      font-size:4rem; 
+      font-family: "Lilita One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color:#F391B9;
+      top:17rem;
+      left:4rem;
+      
+      }
+
+    .title-arches {
+    position:relative;
+    left:0px;
+    width:500px;
+    padding-top:20%;
+}
+.footer {
+    position:sticky;
+    background-color: #F391B9;
+    width:100vw;
+    height:150px;
+    left:0;
+    bottom:0;
+}
+
+.copyright {
+    position:sticky;
+    top:120rem;
+    text-align: center;
+    font-size:1rem;
+    color:#ffff;
+    font-family:"DM Sans", sans-serif;
+}
+.logo {
+    width:3rem;
+    position:absolute;
+    top:50px;
+    left:20px;
+}
+
+.burger {
+    width:10rem;
+    position: absolute;
+    left:85%%;
+    top:0;
+    
+}
+ 
+}
+
+@media only screen and (min-width: 1200px) {
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+  .slider-button {
+        font-size: 1.5rem;
+        padding: 6px 10px;
+      }
+      .title {
+      position:absolute;
+      font-size:4rem; 
+      font-family: "Lilita One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color:#F391B9;
+      top:19rem;
+      left:4rem;
+      
+      }
+
+    .title-arches {
+    position:relative;
+    left:0px;
+    width:500px;
+    padding-top:20%;
+}
+.footer {
+    position:sticky;
+    background-color: #F391B9;
+    width:100vw;
+    height:150px;
+    left:0;
+    bottom:0;
+}
+
+.copyright {
+    position:sticky;
+    top:120rem;
+    text-align: center;
+    font-size:1rem;
+    color:#ffff;
+    font-family:"DM Sans", sans-serif;
+}
+.logo {
+    width:3rem;
+    position:absolute;
+    top:50px;
+    left:20px;
+}
+
+.burger {
+    width:10rem;
+    position: absolute;
+    left:85%%;
+    top:0;
+    
+}
+ 
+}
+
+@media only screen and (min-width: 1440px) {
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 950px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+  .slider-button {
+        font-size: 1.5rem;
+        padding: 6px 10px;
+      }
+      .title {
+      position:absolute;
+      font-size:4rem; 
+      font-family: "Lilita One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color:#F391B9;
+      top:16rem;
+      left:4rem;
+      
+      }
+
+    .title-arches {
+    position:relative;
+    left:0px;
+    width:600px;
+    padding-top:10%;
+}
+.footer {
+    position:sticky;
+    background-color: #F391B9;
+    width:100vw;
+    height:10rem;
+    left:0;
+    bottom:0;
+}
+
+.copyright {
+    position:sticky;
+    top:120rem;
+    text-align: center;
+    font-size:1rem;
+    color:#ffff;
+    font-family:"DM Sans", sans-serif;
+}
+.logo {
+    width:3rem;
+    position:absolute;
+    top:50px;
+    left:20px;
+}
+
+.burger {
+    width:10rem;
+    position: absolute;
+    left:85%%;
+    top:0;
+    
+}
+ 
+}
+
+
+</style>
+
+<body>
+  <!-- 🍔 Menu button (top right corner) -->
+<button class="menu-button" id="openMenu">&#9776;</button>
+
+<!-- 🧊 Fullscreen overlay menu -->
+<div class="overlay-menu" id="overlayMenu">
+  <button class="close-button" id="closeMenu">&times;</button>
+  <nav>
+    <a href="welcome.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<script>
+  const openMenu = document.getElementById('openMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  const overlayMenu = document.getElementById('overlayMenu');
+
+  // 🟢 Show overlay menu
+  openMenu.addEventListener('click', () => {
+    overlayMenu.classList.add('active');
+  });
+
+  // 🔴 Hide overlay menu
+  closeMenu.addEventListener('click', () => {
+    overlayMenu.classList.remove('active');
+  });
+
+  // ⌨️ Close with ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      overlayMenu.classList.remove('active');
+    }
+  });
+</script>
+    <header>
+        <nav>
+            <div>
+                <img class="logo" src="assets/logo.png" alt="logo">
+            </div>
+        </nav>
+        <main>
+            <section>
+                <div>
+                    <img class="title-arches" src="assets/title_arches.svg" alt="title arches">
+
+                    <h1 class="title">learndesign</h1>
+                </div>
+                
+            </section>
+            
+            <section>
+                <div class="slider-container">
+                    <button class="slider-button left" id="prevBtn">&#8592;</button>
+                    <div class="slider-images" id="sliderTrack">
+                      <!-- 🖼️ You can replace these with your own images -->
+                      <img src="assets/mockup_learndesign.jpg" alt="Slide 1" loading="lazy">
+                      <img src="assets/learndesign_mockup (1).jpg" alt="Slide 2" loading="lazy">
+                      <img src="assets/wordmark.jpg" alt="Slide 3" loading="lazy" style="height:50%">
+                      <img src="assets/Professor Eddie Persona.png" alt="Slide 4" loading="lazy" style="height:80%">
+                      <img src="assets/happy mascots-05.png" alt="Slide 5" loading="lazy">
+                    </div>
+                    <button class="slider-button right" id="nextBtn">&#8594;</button>
+                  </div>
+                  
+                  <script>
+                    const slider = document.getElementById('sliderTrack');
+                    const prevBtn = document.getElementById('prevBtn');
+                    const nextBtn = document.getElementById('nextBtn');
+                    const slides = slider.querySelectorAll('img');
+                    let currentIndex = 0;
+                  
+                    function updateSlider() {
+                      const slideWidth = slides[0].clientWidth;
+                      slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+                    }
+                  
+                    // 👉 Move to previous image
+                    prevBtn.addEventListener('click', () => {
+                      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                      updateSlider();
+                    });
+                  
+                    // 👉 Move to next image
+                    nextBtn.addEventListener('click', () => {
+                      currentIndex = (currentIndex + 1) % slides.length;
+                      updateSlider();
+                    });
+                  
+                    // 🧠 Make sure it resizes correctly
+                    window.addEventListener('resize', updateSlider);
+                  </script>
+            </section>
+            
+            <br><br><br><br>
+            <section>
+                <p class="info"><b>Class:</b>Web Design I  |  <b>Professor:</b> Mustafa Ozcicek
+                    | <b>Collaborators:</b> Courtney Hanses  |  
+                    <b>Program:</b> Adobe Illustrator/Figma</p>
+
+                <p class="info bottom-pad">This project was inspired by the concept of wicked problems, where complex challenges demand innovative solutions. We chose to explore the growing issue of AI in the workplace, ultimately shifting our focus toward how AI can enhance, rather than replace, human roles. Specifically, we concentrated on the potential of AI in higher education, particularly in supporting design students like ourselves. By mapping out user journeys, identifying our target audience, and understanding their needs, we developed Learndesign AI. This platform features an AI assistant that provides personalized tutorials, offering support for aspiring designers learning new tools and programs.
+                </p>
+            </section>
+            
+              
+    </main>
+    <div>
+        <footer>
+            <p class="copyright">© Emma Junga 2025</p>
+        </footer>
+    </div>
+</body>
+</html>

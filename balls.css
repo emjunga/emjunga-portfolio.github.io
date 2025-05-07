@@ -1,0 +1,318 @@
+.floating {
+    width: 100px;
+    height: 100px;
+    background-color: #fad4e4;
+    border-radius: 50%;
+    position: relative;
+    top:28rem;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(300px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.floating2 {
+    top:25rem;
+    left:10rem;
+    width: 80px;
+    height: 80px;
+    background-color: #f7ccad;
+    border-radius: 50%;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(90px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.floating3 {
+    top:16rem;
+    left:380px;
+    width:120px;
+    height:120px;
+    background-color:#F391B9;
+    border-radius: 50%;
+    position: relative;
+    animation: float 3.5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(200px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+.floating4 {
+    top:7rem;
+    left:330px;
+    width: 80px;
+    height: 80px;
+    background-color:#c0e5e9;
+    border-radius: 50%;
+    position: relative;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+
+.floating5 {
+    left:12rem;
+    top:4rem;
+    width: 50px;
+    height: 50px;
+    background-color:#95c7c2;
+    border-radius: 50%;
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(200px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+    .floating3 {
+        position:relative;
+        left:30rem;
+    }
+    .floating4 {
+        position:relative;
+        left:30rem;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .floating3 {
+        position:relative;
+        left:38rem;
+    }
+
+    .floating4 {
+        position:relative;
+        left:28rem;
+    }
+
+    .floating5 {
+        position:relative;
+        left:22rem;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+    .floating {
+        position:relative;
+        left:2rem;
+        width:7rem;
+        height:7rem;
+
+    }
+
+    .floating2 {
+        position:relative;
+        left:15rem;
+        width:9rem;
+        height:9rem;
+
+    }
+
+    .floating3 {
+        position:relative;
+        left:49rem;
+        width:10rem;
+        height:10rem;
+    }
+
+    .floating4 {
+        position:relative;
+        left:33rem;
+        width:8rem;
+        height:8rem;
+    }
+
+    .floating5 {
+        position:relative;
+        left:25rem;
+        width:5rem;
+        height:5rem;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .floating {
+        width: 100px;
+        height: 100px;
+        background-color: #fad4e4;
+        border-radius: 50%;
+        position: relative;
+        top:28rem;
+        animation: float 2.5s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+    
+        50% {
+            transform: translateY(400px);
+        }
+    
+        100% {
+            transform: translateY(0);
+        }
+    }
+    
+
+    .floating {
+        position:relative;
+        left:3rem;
+        width:8rem;
+        height:8rem;
+
+    }
+
+    .floating2 {
+        position:relative;
+        left:18rem;
+        width:9rem;
+        height:9rem;
+
+    }
+
+    .floating3 {
+        position:relative;
+        left:65rem;
+        width:10rem;
+        height:10rem;
+    }
+
+    .floating4 {
+        position:relative;
+        left:38rem;
+        width:8rem;
+        height:8rem;
+    }
+
+    .floating5 {
+        position:relative;
+        left:28rem;
+        width:5rem;
+        height:5rem;
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .floating {
+        width: 100px;
+        height: 100px;
+        background-color: #fad4e4;
+        border-radius: 50%;
+        position: relative;
+        top:28rem;
+        animation: float 2.5s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+    
+        50% {
+            transform: translateY(400px);
+        }
+    
+        100% {
+            transform: translateY(0);
+        }
+    }
+    
+
+    .floating {
+        position:relative;
+        left:3rem;
+        width:8rem;
+        height:8rem;
+
+    }
+
+    .floating2 {
+        position:relative;
+        left:18rem;
+        width:9rem;
+        height:9rem;
+
+    }
+
+    .floating3 {
+        position:relative;
+        left:75rem;
+        width:10rem;
+        height:10rem;
+    }
+
+    .floating4 {
+        position:relative;
+        left:55rem;
+        width:8rem;
+        height:8rem;
+    }
+
+    .floating5 {
+        position:relative;
+        left:36rem;
+        width:5rem;
+        height:5rem;
+    }
+
+}

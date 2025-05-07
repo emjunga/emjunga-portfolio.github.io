@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="balls.css">
+</head>
+<style>
+
+* {box-sizing: border-box;}
+
+body {
+        display: flex;
+        flex-direction: row;
+        background-color:#fff9f6;
+    }
+
+.logo {
+        width:30px;
+        position:absolute;
+        top:30px;
+        left:20px;
+    }
+
+.rainbow {
+    position: absolute;
+    align-items: center;
+    width:17rem;
+    left:6rem;
+    top:0;
+}
+
+.title-text {
+    position:absolute;
+    left:9rem;
+    top:3rem;
+    font-family:"Lilita One", sans-serif;
+    transform: rotate(270deg);
+    color: var(--teal, #95C7C2);
+    text-align: right;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.blue-waves {
+    position:absolute;
+    width:100vw;
+    top:50%;
+    left:0;
+
+}
+
+.teal-waves {
+    position:absolute;
+    width:100vw;
+    top:80%;
+    left:0;
+
+}
+
+.door-arch{
+    position: absolute;
+    align-items: center;
+    width:16rem;
+    top:75rem;
+    left:43px;
+
+}
+
+.welcome {
+    position:absolute;
+    top:60%;
+    color: var(--dark-blue, #16656C);
+    text-align: center;
+    font-family: "Lilita One", sans-serif;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align:center;
+    left:4rem;
+
+}
+
+.light-text {
+    position: absolute;
+    color: var(--dark-teal, #2B4042);
+    text-align: right;
+    font-family: "DM Sans";
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    top:85%;
+    right:4rem;
+}
+
+.button {
+  position:absolute;
+  top:83rem;
+  left:5rem;
+  border: none;
+  border-radius:20px;
+  color: #2B4042;
+  padding: 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {
+    background-color:#95C7C2;
+    font-family: "DM Sans", sans-serif;
+    font-size:1.5rem;
+}
+
+a:link {
+  color: #2B4042;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #fff9f6;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color:#fff9f6;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+footer {
+    position:fixed;
+    background-color: #F391B9;
+    width:100%;
+    height:90px;
+    left:0;
+    bottom:0
+}
+
+.lilita-one-regular {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+.copyright {
+    text-align: center;
+    font-size: 13px;
+    color:#ffff;
+    font-family:"DM Sans", sans-serif;
+    margin:60px;
+   
+    
+}
+
+.dm-sans {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 30px;
+}
+
+.menu-button {
+      position: fixed;
+      top: 30px;
+      right: 20px;
+      z-index: 3;
+      font-size: 4rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color:#F391B9;
+    }
+
+    /* 🧊 Fullscreen overlay */
+    .overlay-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color:#BFE5E8;
+      color:#2B4042;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      z-index: 1000;
+
+    }
+
+    .overlay-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .overlay-menu nav a {
+      color:#2B4042;
+      font-size: 2rem;
+      font-family:"DM Sans", sans-serif;
+      text-decoration: none;
+      margin: 20px 0;
+      transition: color 0.3s ease;
+    }
+
+    .overlay-menu nav a:hover {
+      color:#fff9f6;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 4rem;
+      background: none;
+      border: none;
+      color: #2B4042;
+      cursor: pointer;
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        .logo {
+            position:absolute;
+            width:3rem;
+            top:3rem;
+        }
+
+        .blue-waves {
+            position:absolute;
+            width:38rem;
+            top:38rem;
+        }
+
+        .teal-waves {
+            position:absolute;
+            width:38rem;
+            top:60rem;
+        }
+
+        .welcome {
+            position: absolute;
+            top:45rem;
+            font-size:2.5rem;
+            left:5.5rem;
+        }
+
+        .door-arch {
+            position: absolute;
+            top:85rem;
+            left:2rem;
+        }
+
+        .light-text {
+            position: absolute;
+            top:68rem;
+            font-size:4rem;
+            left:2rem;
+        }
+
+        .button {
+            position: absolute;
+            top:93rem;
+            left:4rem;
+            width:11rem;
+        }
+
+ 
+
+    }
+
+    @media only screen and (min-width: 768px) {
+
+        .logo {
+            position:absolute;
+            width:4rem;
+            top:3rem;
+        }
+
+        .blue-waves {
+            position: absolute;
+            top:40rem;
+        }
+
+        .teal-waves {
+            position: absolute;
+            top:65rem;
+        }
+
+        .rainbow {
+            position:absolute;
+            left:7rem;
+        }
+
+        .title-text  {
+            position: absolute;
+            left:10rem;
+        }
+
+        .welcome {
+            position: absolute;
+            font-size: 3rem;
+            top:48rem;
+            left:8rem;
+        }
+
+        .door-arch {
+            position: absolute;
+            width:20rem;
+            top:98em;
+        }
+
+        .button {
+            position: absolute;
+            top:110rem;
+            left:7rem;
+            width:11rem;
+        }
+
+        .light-text {
+            position: absolute;
+            font-size: 4.5rem;
+            top:75rem;
+            left:5rem;
+        }
+
+    }
+
+    @media only screen and (min-width: 992px) {
+
+        .logo {
+            position:absolute;
+            width:4rem;
+            top:3rem;
+            left:2rem;
+        }
+
+        .blue-waves {
+            position: absolute;
+            top:45rem;
+        }
+
+        .teal-waves {
+            position: absolute;
+            top:72rem;
+        }
+
+        .rainbow {
+            position:absolute;
+            left:9rem;
+        }
+
+        .title-text  {
+            position: absolute;
+            left:12rem;
+        }
+
+        .welcome {
+            position: absolute;
+            font-size:3.5rem;
+            top:54rem;
+            left:13rem;
+        }
+
+        .door-arch {
+            position: absolute;
+            width:25rem;
+            top:116em;
+            left:5rem;
+        }
+
+        .button {
+            position: absolute;
+            top:130rem;
+            left:10rem;
+            width:14rem;
+            font-size: 2rem;
+            border-radius:2rem;
+        }
+
+        .light-text {
+            position: absolute;
+            font-size: 4.5rem;
+            top:88rem;
+            right:6rem;
+        }
+
+
+    }
+
+    @media only screen and (min-width: 1200px) {
+
+        .logo {
+            position:absolute;
+            width:4rem;
+            top:3rem;
+            left:2rem;
+        }
+
+        .blue-waves {
+            position: absolute;
+            top:50rem;
+        }
+
+        .teal-waves {
+            position: absolute;
+            top:88rem;
+        }
+
+        .rainbow {
+            position:absolute;
+            left:13rem;
+            width:22rem;
+        }
+
+        .title-text  {
+            position: absolute;
+            left:17.5rem;
+            font-size:5rem;
+        }
+
+        .welcome {
+            position: absolute;
+            font-size:4rem;
+            top:65rem;
+            left:16rem;
+        }
+
+        .door-arch {
+            position: absolute;
+            width:30rem;
+            top:143rem;
+            left:6rem;
+        }
+
+        .button {
+            position: absolute;
+            top:160rem;
+            left:13rem;
+            width:15rem;
+            font-size: 2rem;
+            border-radius:2rem;
+        }
+
+        .light-text {
+            position: absolute;
+            font-size:5rem;
+            top:108rem;
+            right:8rem;
+        }
+
+
+
+    }
+
+
+    @media only screen and (min-width: 1440px) {
+
+        .logo {
+            position:absolute;
+            width:4rem;
+            top:3rem;
+            left:2rem;
+        }
+
+        .blue-waves {
+            position: absolute;
+            top:50rem;
+        }
+
+        .teal-waves {
+            position: absolute;
+            top:95rem;
+        }
+
+        .rainbow {
+            position:absolute;
+            left:13rem;
+            width:22rem;
+        }
+
+        .title-text  {
+            position: absolute;
+            left:17.5rem;
+            font-size:5rem;
+        }
+
+        .welcome {
+            position: absolute;
+            font-size:4rem;
+            top:68rem;
+            left:23rem;
+        }
+
+        .door-arch {
+            position: absolute;
+            width:37rem;
+            top:160rem;
+            left:6rem;
+        }
+
+        .button {
+            position: absolute;
+            top:180rem;
+            left:15.5rem;
+            width:17rem;
+            font-size: 3rem;
+            border-radius:3rem;
+        }
+
+        .light-text {
+            position: absolute;
+            font-size:6rem;
+            top:115rem;
+            right:8rem;
+        }
+
+
+}
+
+</style>
+
+<body>
+
+    <header>
+        <nav>
+            <div>
+                <img class="logo" src="assets/logo.png" alt="logo">
+            </div>
+        </nav>
+             <!-- 🍔 Menu button (top right corner) -->
+<button class="menu-button" id="openMenu">&#9776;</button>
+
+<!-- 🧊 Fullscreen overlay menu -->
+<div class="overlay-menu" id="overlayMenu">
+  <button class="close-button" id="closeMenu">&times;</button>
+  <nav>
+    <a href="welcome.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<script>
+  const openMenu = document.getElementById('openMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  const overlayMenu = document.getElementById('overlayMenu');
+
+  // 🟢 Show overlay menu
+  openMenu.addEventListener('click', () => {
+    overlayMenu.classList.add('active');
+  });
+
+  // 🔴 Hide overlay menu
+  closeMenu.addEventListener('click', () => {
+    overlayMenu.classList.remove('active');
+  });
+
+  // ⌨️ Close with ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      overlayMenu.classList.remove('active');
+    }
+  });
+</script>
+
+  
+
+        <div>
+            <img class="rainbow" src="assets/rainbow_arch.png" alt="rainbowarch">  
+        </div>
+
+        <div>
+            <h1 class="title-text">Hello!</h1>
+        </div>
+    </header>    
+
+    <main>
+        <section>
+            <div class="floating"></div>
+            <div class="floating2"></div>
+            <div class="floating3"></div>
+            <div class="floating4"></div>
+            <div class="floating5"></div>
+        </section>
+        <section>
+        <div>       
+        <img class="blue-waves" src="assets/blue waves.png" alt="blue waves">
+        </div>
+        <div><p class="welcome">Welcome to my portfolio <br> website</p> </div>   
+
+        <div>
+        <img class="teal-waves" src="assets/teal waves.png" alt="teal waves">
+        </div>
+        <div><p class="light-text">Feel free to look<br> around</p></div>
+        </section>
+
+        <section>
+            <img class="door-arch" src="assets/door-arch.png" alt="door to portfolio">
+
+            <button class="button button1"><a href="projects.html">Portfolio</a></button>
+        </section>
+
+    </main>
+    
+    <div>
+        <footer>
+            <p class="copyright">© Emma Junga 2025</p>
+        </footer>
+    </div>
+
+</body>
+</html>

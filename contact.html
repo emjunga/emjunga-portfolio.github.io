@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    * {box-sizing: border-box;}
+
+    body {
+        display: flex;
+        flex-direction: row;
+        background-color:#fff9f6;
+    }
+
+    .logo {
+        width:30px;
+        position:absolute;
+        top:30px;
+        left:20px;
+    }
+
+
+    .lilita-one-regular {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .title {
+    position:absolute;
+    font-family: "Lilita One", sans-serif;
+    font-size:60px;
+    margin-top:150px;
+    right:30px;  
+    text-align: right;
+    color:#95c7c2;
+    margin-bottom:0px;
+  }
+
+.orange {
+    position:absolute;
+    top:30%;
+    
+}
+
+.orange-title{
+    position:absolute;
+    font-family: "Lilita One", sans-serif;
+    font-size:50px; 
+    text-align: center;
+    color: #f49f52;
+    padding-top:27rem;
+    left:11rem;
+
+}
+
+.pink-box {
+    position:absolute;
+    width:25rem;
+    top:40rem;
+    left:4.5rem;
+}
+
+
+.form-fields {
+    position:absolute;
+    color:#F391B9;
+    font-size:5rem;
+    top:43rem;
+    left:8rem;
+    font-family:"DM Sans", sans-serif;
+ 
+
+}
+
+.name {
+    background-color: #fff9f6;
+    border-radius: 1rem;
+    font-family:"DM Sans", sans-serif;
+    padding: 5px 13px;
+    margin-left:0;
+
+}
+
+.email {
+    background-color: #fff9f6;
+    border-radius: 1rem;
+    font-family:"DM Sans", sans-serif;
+    padding: 5px 15px;
+    margin-left:0;
+
+}
+
+.submit {
+    background-color:#f49f52;
+    border: 0;
+    border-radius: 1rem;
+    font-family:"DM Sans", sans-serif;
+    color: #fff9f6;
+    padding: 5px 15px;
+    margin-left:0;
+}
+
+.info-title {
+    position:absolute;
+    font-family: "Lilita One", sans-serif;
+    font-size:40px;
+    margin-top:150px;
+    right:30px;  
+    bottom:2rem;
+    left:10rem;
+    color:#f49f52
+}
+
+.icons1 {
+    position:absolute;
+    width:10rem;
+    top:96%;
+    left:7rem;
+}
+
+.icons2 {
+    position:absolute;
+    width:10rem;
+    top:96%;
+    left:17rem;
+}
+
+  footer {
+    position:fixed;
+    background-color: #F391B9;
+    width:100%;
+    height:90px;
+    left:0;
+    bottom:0;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 13px;
+    color:#ffff;
+    font-family:"DM Sans", sans-serif;
+    margin:60px;
+   
+    
+}
+
+.dm-sans {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 30px;
+  font-style: normal;
+}
+
+.menu-button {
+      position: fixed;
+      top: 30px;
+      right: 20px;
+      z-index: 3;
+      font-size: 4rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color:#F391B9;
+    }
+
+    /* 🧊 Fullscreen overlay */
+    .overlay-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color:#BFE5E8;
+      color:#2B4042;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      z-index: 1000;
+
+    }
+
+    .overlay-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .overlay-menu nav a {
+      color:#2B4042;
+      font-size: 2rem;
+      font-family:"DM Sans", sans-serif;
+      text-decoration: none;
+      margin: 20px 0;
+      transition: color 0.3s ease;
+    }
+
+    .overlay-menu nav a:hover {
+      color:#fff9f6;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 4rem;
+      background: none;
+      border: none;
+      color: #2B4042;
+      cursor: pointer;
+    }
+
+@media only screen and (min-width: 768px) {
+
+    .logo {
+        width:3rem;
+        position:absolute;
+        top:30px;
+        left:20px;
+    }
+
+    .orange {
+        position: relative;
+        width:49rem;
+        top:15rem;
+        
+    }
+
+    .title {
+        position: relative;
+        font-size: 5rem;
+        padding-left:2px;
+        top:4rem;
+        right:3rem;
+
+    }
+
+    .orange-title {
+        position: absolute;
+        top:15rem;
+        font-size: 3.5rem;
+        left:19rem;
+
+    }
+
+    .pink-box {
+        position: absolute;
+        width:38rem;
+        top:56rem;
+        left:7rem;
+
+    }
+
+    .form-fields {
+        position: absolute;
+        font-size: 1.5rem;
+        top:61rem;
+        left:12rem;
+
+    }
+
+    .name, .email {
+        border-radius: 2rem;
+    }
+
+    .icons1 {
+        position: absolute;
+        top:100rem;
+        left:22rem;
+        width:10rem;
+        
+    }
+
+    .icons2 {
+        position: absolute;
+        top:100rem;
+        left:32rem;
+        width:10rem;
+    }
+
+    .info-title {
+        position: absolute;
+        top:93rem;
+        left:8rem;
+        font-size:2rem;
+    }
+
+    .text-area {
+        width:19rem;
+        height:2.5rem;
+        border-radius: 2rem;
+        border:none;
+    }
+
+    .message-area {
+        width:26rem;
+        height:12rem;
+        border-radius: 2rem;
+        border:none;
+    }
+
+    .submit {
+        font-size: 1.5rem;
+        border-radius:2rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .logo {
+        width:4rem;
+        position:absolute;
+        top:30px;
+        left:20px;
+    }
+
+    .orange {
+        position: relative;
+        width:61rem;
+        top:15rem;
+        
+    }
+
+    .title {
+        position: relative;
+        font-size: 6rem;
+        padding-left:2px;
+        right:30px;
+
+    }
+
+    .orange-title {
+        position: absolute;
+        top:19rem;
+        font-size: 5rem;
+        left:22rem;
+
+    }
+
+    .pink-box {
+        position: absolute;
+        width:45rem;
+        top:65rem;
+        left:9rem;
+
+    }
+
+    .form-fields {
+        position: absolute;
+        font-size: 2rem;
+        top:70rem;
+        left:15rem;
+
+    }
+
+    .name, .email, .submit{
+        border-radius: 2rem;
+        font-size: 2rem;
+    }
+
+    .icons1 {
+        position: absolute;
+        top:118rem;
+        left:29rem;
+        width:10rem;
+        
+    }
+
+    .icons2 {
+        position: absolute;
+        top:118rem;
+        left:37rem;
+        width:10rem;
+    }
+    .info-title {
+        position: absolute;
+        font-size: 2rem;
+        top:111rem;
+        left:16rem;
+    }
+    .text-area {
+        width:22rem;
+        height:2.5rem;
+        border-radius: 2rem;
+        border:none;
+    }
+
+    .message-area {
+        width:30rem;
+        height:12rem;
+        border-radius: 2rem;
+        border:none;
+    }
+
+
+}
+
+@media only screen and (min-width: 1200px) {
+    .logo {
+        width:5rem;
+        position:absolute;
+        top:30px;
+        left:20px;
+    }
+
+    .orange {
+        position: relative;
+        width:74rem;
+        top:15rem;
+        
+    }
+
+    .title {
+        position: relative;
+        font-size: 6.5rem;
+        right:30px;
+
+    }
+
+    .orange-title {
+        position: absolute;
+        top:23rem;
+        font-size: 6rem;
+        left:27rem;
+
+    }
+
+    .pink-box {
+        position: absolute;
+        width:50rem;
+        top:76rem;
+        left:13rem;
+
+    }
+
+    .form-fields {
+        position: absolute;
+        font-size: 2rem;
+        top:83rem;
+        left:20rem;
+
+    }
+
+    .name, .email, .submit{
+        border-radius: 2rem;
+        font-size: 2rem;
+    }
+
+
+    .icons1 {
+        position: absolute;
+        top:138rem;
+        left:35rem;
+        width:10rem;
+        
+    }
+
+    .icons2 {
+        position: absolute;
+        top:138rem;
+        left:45rem;
+        width:10rem;
+    }
+    .info-title {
+        position: absolute;
+        font-size: 3rem;
+        top:130rem;
+        left:15rem;
+    }
+    .text-area {
+        width:26rem;
+        height:2.5rem;
+        border-radius: 2rem;
+        border:none;
+    }
+
+    .message-area {
+        width:34rem;
+        height:12rem;
+        border-radius: 2rem;
+        border:none;
+    }
+
+}
+
+
+
+    </style>
+<body>
+    <header>
+        <nav>
+            <div>
+               <a href="welcome.html"><img class="logo" src="assets/logo.png" alt="logo"></a>
+            </div>
+            
+        </nav>
+      <!-- 🍔 Menu button (top right corner) -->
+<button class="menu-button" id="openMenu">&#9776;</button>
+
+<!-- 🧊 Fullscreen overlay menu -->
+<div class="overlay-menu" id="overlayMenu">
+  <button class="close-button" id="closeMenu">&times;</button>
+  <nav>
+    <a href="welcome.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<script>
+  const openMenu = document.getElementById('openMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  const overlayMenu = document.getElementById('overlayMenu');
+
+  // 🟢 Show overlay menu
+  openMenu.addEventListener('click', () => {
+    overlayMenu.classList.add('active');
+  });
+
+  // 🔴 Hide overlay menu
+  closeMenu.addEventListener('click', () => {
+    overlayMenu.classList.remove('active');
+  });
+
+  // ⌨️ Close with ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      overlayMenu.classList.remove('active');
+    }
+  });
+</script>
+</header>
+    
+    <main>
+        <section>
+            <h1 class="title">Lets Get in<br> Touch!</h1>
+        </section>
+
+        <section>
+            <div>
+                <img class="orange" src="assets/orange_arch.jpg" alt="orange arch">
+            </div>
+            <div>
+               <h2 class="orange-title">Contact<br> Form</h2>
+            </div>
+            <div>
+            <img class="pink-box" src="assets/pink-box.svg" alt="pink box">
+             
+          </div>
+            <div class="form-fields">
+                <form action="/action_page.php">
+                    <label for="name" class="name" >Name:</label>
+                    <input type="text" id="name" name="name" class="text-area"><br><br>
+             
+                  </form> 
+                  <form action="/action_page.php">
+                    <label for="email" class="email" >Email:</label>
+                    <input type="email" id="email" name="email" class="text-area"> <br><br>
+                  </form>
+                  <br>
+            
+                  <form action="/action_page.php">
+                    <label for="messages" class="name" >Messages:</label><br><br>
+                    <textarea name="message" rows="10" cols="30" class="message-area"></textarea>
+                    <br><br>
+                    <input type="submit" class="submit">
+                  </form>
+            </div>
+        </section>
+         <section>
+            <p class="info-title">Emma's Info:</p>
+            <div>    
+            <a href="mailto:emjunga35@gmail.com" alt="my email"><img class="icons1" src="assets/icons.svg" alt="mail icon"></a>
+            <a href="https://www.linkedin.com/in/emma-junga-b63698265?trk=people-guest_people_search-card" alt="linkedin profile"><img class="icons2" src="assets/linkedin.svg" alt="linkedin icon"></a>
+            </div>
+        </section> 
+    </main>
+    <div>
+        <footer>
+            <p class="copyright">© Emma Junga 2025</p>
+        </footer>
+    </div>
+    
+</body>
+</html>

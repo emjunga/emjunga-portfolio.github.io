@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<style>
+    * {box-sizing: border-box;}
+
+body {
+        display: flex;
+        flex-direction: row;
+        background-color:#fff9f6;
+        overflow-x: hidden;
+    }
+
+.logo {
+        width:30px;
+        position:absolute;
+        top:30px;
+        left:20px;
+    }
+
+.burger {
+        width:110px;
+        position: absolute;
+        right:5px;
+        top:0px;
+    }
+
+.bioimg {
+    position:absolute;
+    width:4rem;
+    left:0;
+    right:0;
+    top:8rem;
+
+}
+
+.hey {
+    position:absolute;
+    font-family: "Lilita One", sans-serif;
+    color:#95C7C2;
+    font-size:3rem;
+    top:12rem;
+    left:2rem;
+}
+
+.text {
+    position:absolute;
+    top:27rem;
+    color:#F391B9;
+    margin-left:2.5rem;
+    margin-right:2.5rem;
+    text-align: left;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.waves {
+    position: absolute;
+    top:70rem;
+    margin:0;
+    left:0;
+    right:0;
+}
+
+.inspire-text {
+    position:absolute;
+    top:76rem;
+    left:7rem;
+    color:#2B4042;
+    font-family: "Lilita One";
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+footer {
+    position:fixed;
+    background-color: #F391B9;
+    width:100%;
+    height:200px;
+    left:0;
+    bottom:0
+}
+
+.lilita-one-regular {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+.copyright {
+    text-align: center;
+    font-size: 13px;
+    color:#ffff;
+    font-family:"DM Sans", sans-serif;
+    margin:60px;
+   
+    
+}
+
+.dm-sans {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 30px;
+}
+
+.slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .slider-images {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      width: 100%;
+    }
+
+    .slider-images img {
+      width: 100%;
+      flex-shrink: 0;
+      height: auto;
+      display: block;
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 10px 15px;
+      cursor: pointer;
+      z-index: 1;
+      border-radius: 4px;
+    }
+
+    .slider-button.left {
+      left: 10px;
+    }
+
+    .slider-button.right {
+      right: 10px;
+    }
+
+.menu-button {
+      position: fixed;
+      top: 30px;
+      right: 20px;
+      z-index: 3;
+      font-size: 4rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color:#F391B9;
+    }
+
+  /* 🧊 Fullscreen overlay */
+  .overlay-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color:#BFE5E8;
+      color:#2B4042;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      z-index: 1000;
+
+    }
+
+    .overlay-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .overlay-menu nav a {
+      color:#2B4042;
+      font-size: 2rem;
+      font-family:"DM Sans", sans-serif;
+      text-decoration: none;
+      margin: 20px 0;
+      transition: color 0.3s ease;
+    }
+
+    .overlay-menu nav a:hover {
+      color:#fff9f6;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 4rem;
+      background: none;
+      border: none;
+      color: #2B4042;
+      cursor: pointer;
+    }
+
+
+@media only screen and (min-width: 768px) {
+
+    .logo {
+        position: absolute;
+        width:3rem;
+        top:2rem;
+        left:2rem;
+    }
+
+    .bioimg {
+        width:20rem;
+        margin-top:2rem;
+        left:30rem;
+    }
+
+    .hey {
+        left:2rem;
+        font-size:3rem;
+        top:7rem;
+    }
+
+    .text {
+        font-size: 1rem;
+        top:16rem;
+        left:1rem;
+        right:18rem;
+    }
+
+    .waves {
+        position: absolute;
+        top:50rem;
+        width:50rem;
+    }
+
+    .inspire-text {
+        position: absolute;
+        font-size: 2rem;
+        top:57rem;
+        left:17rem;
+    }
+
+    .slider-container {
+      position: relative;
+      width:25rem;
+      max-width: 800px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      top:65rem;
+      left:12rem;
+    }
+
+      .slider-button {
+        font-size: 1.5rem;
+        padding: 6px 10px;
+      }
+
+    footer {
+      height:90px;
+    }
+
+}
+
+
+@media only screen and (min-width: 992px) {
+
+.logo {
+    position: absolute;
+    width:3rem;
+    top:2rem;
+    left:2rem;
+}
+
+.bioimg {
+    width:25rem;
+    top:10rem;
+    left:37rem;
+}
+
+.hey {
+    left:3.5rem;
+    font-size:3rem;
+    top:7rem;
+}
+
+.text {
+    font-size: 1rem;
+    top:16rem;
+    left:1rem;
+    right:23rem;
+}
+
+.waves {
+    position: absolute;
+    top:46rem;
+    width:62rem;
+}
+
+.inspire-text {
+    position: absolute;
+    font-size: 2.5rem;
+    top:55rem;
+    left:21rem;
+}
+
+.slider-container {
+  position: relative;
+  width:34rem;
+  max-width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  top:65rem;
+  left:13rem;
+}
+
+  .slider-button {
+    font-size: 1.5rem;
+    padding: 6px 10px;
+  }
+
+footer {
+  height:90px;
+}
+
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+.logo {
+    position: absolute;
+    width:3rem;
+    top:2rem;
+    left:2rem;
+}
+
+.bioimg {
+    width:30rem;
+    margin-top:4rem;
+    left:45rem;
+}
+
+.hey {
+    left:3.5rem;
+    font-size:3rem;
+    top:10rem;
+}
+
+.text {
+    font-size: 1rem;
+    top:20rem;
+    left:1rem;
+    right:30rem;
+}
+
+.waves {
+    position: absolute;
+    top:50rem;
+    width:75rem;
+}
+
+.inspire-text {
+    position: absolute;
+    font-size: 3rem;
+    top:59rem;
+    left:25rem;
+}
+
+.slider-container {
+  position: relative;
+  width:40rem;
+  max-width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  top:73rem;
+  left:17rem;
+}
+
+  .slider-button {
+    font-size: 1.5rem;
+    padding: 6px 10px;
+  }
+
+footer {
+  height:90px;
+}
+
+}
+
+
+
+</style>
+<body>
+    <header>
+        <nav>
+            <div>
+                <a href="welcome.html"><img class="logo" src="assets/logo.png" alt="logo"></a>
+            </div>
+              <!-- 🍔 Menu button (top right corner) -->
+<button class="menu-button" id="openMenu">&#9776;</button>
+
+<!-- 🧊 Fullscreen overlay menu -->
+<div class="overlay-menu" id="overlayMenu">
+  <button class="close-button" id="closeMenu">&times;</button>
+  <nav>
+    <a href="welcome.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<script>
+  const openMenu = document.getElementById('openMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  const overlayMenu = document.getElementById('overlayMenu');
+
+  // 🟢 Show overlay menu
+  openMenu.addEventListener('click', () => {
+    overlayMenu.classList.add('active');
+  });
+
+  // 🔴 Hide overlay menu
+  closeMenu.addEventListener('click', () => {
+    overlayMenu.classList.remove('active');
+  });
+
+  // ⌨️ Close with ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      overlayMenu.classList.remove('active');
+    }
+  });
+</script>
+        </nav>
+    <main>
+    <section>
+        <div>
+            <img  class="bioimg" src="assets/bio_img.jpg" alt="bio graphic image">
+        </div>
+        <p class="hey">Nice to meet you!</p>
+    </section>
+    <section>
+        <div class="text">
+        <p>
+            Hi, I'm Emma Junga, a junior at Central Michigan University pursuing a Bachelor of Fine Arts with a concentration in Graphic Design. I am deeply passionate about art and design, and I find joy in expressing myself through various forms of media—whether it's hands-on art like drawing, painting, and printmaking, or creating digitally.
+        </p>
+        <p>
+            When I'm not immersed in design, you can find me reading or outdoors, where I enjoy disconnecting and soaking in the beauty of nature. Nature has been a constant source of inspiration for me, especially the calming earth tones and the vibrant colors of spring. In my design work, I strive to achieve a harmonious balance between neutral tones and energetic, bold pops of color.
+        </p>
+        </div>
+    </section>
+    <section>
+        <div class="waves">
+            <img src="assets/longtealwaves2.svg" alt="long teal waves">
+        </div>
+        <div class="inspire-text">
+            <p>What Inspires Me</p>
+        </div>
+    </section>
+    <section>
+        <div class="slider-container">
+            <button class="slider-button left" id="prevBtn">&#8592;</button>
+            <div class="slider-images" id="sliderTrack">
+              <!-- 🖼️ You can replace these with your own images -->
+              <img src="assets/nature.jpg" alt="Slide 1" loading="lazy">
+              <img src="assets/fam-inspo.jpg" alt="Slide 2" loading="lazy">
+              <img src="assets/naill.jpg" alt="Slide 3" loading="lazy">
+              <img src="assets/lake.jpg" alt="Slide 4" loading="lazy">
+            </div>
+            <button class="slider-button right" id="nextBtn">&#8594;</button>
+          </div>
+          
+          <script>
+            const slider = document.getElementById('sliderTrack');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slides = slider.querySelectorAll('img');
+            let currentIndex = 0;
+          
+            function updateSlider() {
+              const slideWidth = slides[0].clientWidth;
+              slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            }
+          
+            // 👉 Move to previous image
+            prevBtn.addEventListener('click', () => {
+              currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+              updateSlider();
+            });
+          
+            // 👉 Move to next image
+            nextBtn.addEventListener('click', () => {
+              currentIndex = (currentIndex + 1) % slides.length;
+              updateSlider();
+            });
+          
+            // 🧠 Make sure it resizes correctly
+            window.addEventListener('resize', updateSlider);
+          </script>
+    </section>
+
+    </main>
+        <div>
+            <footer>
+                <p class="copyright">© Emma Junga 2025</p>
+            </footer>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designs Page</title>
+</head>
+<style>
+
+    * {box-sizing: border-box;}
+
+    body {
+        display: flex;
+        flex-direction: row;
+        background-color:#fff9f6;
+    }
+
+    .logo {
+        width:30px;
+        position:absolute;
+        top:30px;
+        left:20px;
+    }
+
+    .lilita-one-regular {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  footer {
+    position:fixed;
+    background-color: #F391B9;
+    width:100%;
+    height:90px;
+    left:0;
+    bottom:0
+}
+
+.copyright {
+    text-align: center;
+    font-size: 13px;
+    color:#ffff;
+    font-family:"DM Sans", sans-serif;
+    margin:60px;
+   
+    
+}
+
+
+.dm-sans {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 30px;
+  font-style: normal;
+}
+
+.menu-button {
+      position: fixed;
+      top: 30px;
+      right: 20px;
+      z-index: 3;
+      font-size: 4rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color:#F391B9;
+    }
+
+    /* 🧊 Fullscreen overlay */
+    .overlay-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color:#BFE5E8;
+      color:#2B4042;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      z-index: 1000;
+
+    }
+
+    .overlay-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .overlay-menu nav a {
+      color:#2B4042;
+      font-size: 2rem;
+      font-family:"DM Sans", sans-serif;
+      text-decoration: none;
+      margin: 20px 0;
+      transition: color 0.3s ease;
+    }
+
+    .overlay-menu nav a:hover {
+      color:#fff9f6;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 4rem;
+      background: none;
+      border: none;
+      color: #2B4042;
+      cursor: pointer;
+    }
+
+    .pink-arches {
+        position: absolute;
+        width:15rem;
+        top:0px;
+        left:7rem;
+    }
+
+    .title {
+        position: absolute;
+        font-family: "Lilita One", sans-serif;
+        font-size:2rem;
+        left:11rem;
+        top:2rem;
+        color:#F391B9;
+        
+    }
+
+    .arch {
+        position: absolute;
+        width:35rem;
+        top:27rem;
+        left:7rem;
+    }
+
+    .text {
+        position: absolute;
+        font-family: "Lilita One", sans-serif;
+        font-size: 2rem;
+        top:32rem;
+        left:18rem;
+        color:#f49f52;
+        text-align: center;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .slider-images {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      width: 100%;
+    }
+
+
+    .slider-images a {
+     flex: 0 0 100%;     /* Each slide takes full container width */
+     height: 100%;
+    display: block;
+    }
+
+
+    .slider-images img {
+      width: 100%;
+      flex-shrink: 0;
+      height: auto;
+      display: block;
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 10px 15px;
+      cursor: pointer;
+      z-index: 1;
+      border-radius: 4px;
+    }
+
+    .slider-button.left {
+      left: 10px;
+    }
+
+    .slider-button.right {
+      right: 10px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .slider-container {
+            width:27rem;
+            top:40rem;
+            left:10.5rem;
+        }
+
+    }
+
+    @media only screen and (max-width: 992px) {
+        .slider-container {
+            width:29rem;
+            top:46rem;
+            left:17rem;
+        }
+
+        .arch {
+            width:40rem;
+            left:12rem;
+        }
+
+        .text {
+            font-size:2.5rem;
+            top:35rem;
+            left:23rem;
+        
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+
+        .pink-arches {
+            width:20rem;
+        }
+
+        .title {
+            font-size: 3rem;
+            left:12rem;
+        }
+
+        .slider-container {
+            width:45rem;
+            top:53rem;
+            left:18rem;
+        }
+
+        .arch {
+            width:50rem;
+            left:12rem;
+        }
+
+        .text {
+            font-size:3rem;
+            top:38rem;
+            left:26rem;
+        
+        }
+    }
+
+
+
+
+
+</style>
+<body>
+
+    <header>
+        <nav>
+            <div>
+                <a href="welcome.html"><img class="logo" src="assets/logo.png" alt="logo"></a>
+            </div>
+
+            <div>
+             <img class="pink-arches" src="assets/design_arch.png" alt="pink arches">
+              <h1 class="title">Designs</h1>
+          </div>
+          
+        </nav>
+    </header>
+    <main>
+<section>
+         <!-- 🍔 Menu button (top right corner) -->
+<button class="menu-button" id="openMenu">&#9776;</button>
+
+<!-- 🧊 Fullscreen overlay menu -->
+<div class="overlay-menu" id="overlayMenu">
+  <button class="close-button" id="closeMenu">&times;</button>
+  <nav>
+    <a href="welcome.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<script>
+  const openMenu = document.getElementById('openMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  const overlayMenu = document.getElementById('overlayMenu');
+
+  // 🟢 Show overlay menu
+  openMenu.addEventListener('click', () => {
+    overlayMenu.classList.add('active');
+  });
+
+  // 🔴 Hide overlay menu
+  closeMenu.addEventListener('click', () => {
+    overlayMenu.classList.remove('active');
+  });
+
+  // ⌨️ Close with ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      overlayMenu.classList.remove('active');
+    }
+  });
+</script>
+<section>
+    <img src="assets/short_orange.jpg" alt="orange arch" class="arch">
+
+    <div>
+        <p class="text">Check out some <br>of my designs!</p>
+    </div>
+</section>
+<section>
+    <div class="slider-container">
+        <button class="slider-button left" id="prevBtn">&#8592;</button>
+        <div class="slider-images" id="sliderTrack">
+
+         <a href="learndesign.html"><img src="assets/mockup_learndesign.jpg" alt="Slide 1" loading="lazy"></a>
+         <a href="Nutrispark.html"><img src="assets/apple_graph.jpg" alt="Slide 2" loading="lazy" style="height:80%"></a>
+          <a href="revive.html"><img src="assets/bag_img.jpg" alt="Slide 3" loading="lazy"></a>
+          <a href="AIGA.html"><img src="assets/AIGA_M1.jpg" alt="Slide 4" loading="lazy"></a>
+          <a href="Intaglio.html"><img src="assets/intaglio_thumbn.jpg" alt="Slide 5" loading="lazy"></a>
+        </div>
+        <button class="slider-button right" id="nextBtn">&#8594;</button>
+      </div>
+    <script>
+        const slider = document.getElementById('sliderTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slides = slider.querySelectorAll('img');
+        let currentIndex = 0;
+      
+        function updateSlider() {
+          const slideWidth = slides[0].clientWidth;
+          slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+      
+        // 👉 Move to previous image
+        prevBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          updateSlider();
+        });
+      
+        // 👉 Move to next image
+        nextBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex + 1) % slides.length;
+          updateSlider();
+        });
+      
+        // 🧠 Make sure it resizes correctly
+        window.addEventListener('resize', updateSlider);
+      </script> 
+</section>
+</main>
+<footer>
+    <p class="copyright">© Emma Junga 2025</p>
+</footer>
+</body>
+</html>
